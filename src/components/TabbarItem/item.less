@@ -1,7 +1,22 @@
 .tabbar-item {
-  padding: 3px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: .04rem 0;
+  font-size: .12rem;
+  color: #999;
   text-align: center;
+  .tabbar-item-wrap {
+    margin-bottom: .03rem;
+    .tabbar-item-icon {
+      width: .22rem;
+      height: .22rem;
+      vertical-align: middle;
+    }
+  }
   &.tabbar-item-active {
-    color: blue;
+    color: #368aff;
   }
 }
