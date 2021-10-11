@@ -2,7 +2,7 @@ import Main from '@/pages/Main'
 import Error from '@/pages/Error'
 import Data from '@/pages/Data'
 import Database from '@/pages/Database'
-import DevBusi from '@/pages/DevBusi'
+import DevBusi from '@/pages/DevBusi/Home'
 
 export const ROUTES: any[] = [
   {

@@ -1,0 +1,28 @@
+
+// 宽高
+.size(@width, @height) {
+  width: @width;
+  height: @height
+}
+// 字体
+.font(@font-size, @color) {
+  font-size: @font-size;
+  color: @color
+}
+// 粗体
+.font-bold(@font-size, @color) {
+  .font(@font-size, @color);
+  font-weight: bold
+}
+// 高度行高
+.h-lh(@height, @line-height) {
+  height: @height;
+  line-height: @line-height;
+}
+
+// 文本溢出显示...
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,47 @@
+
+// 无滚动条
+.scrollbar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+// 顶部蓝色背景圆弧
+.header-back {
+  overflow-y: auto;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    right: -1rem;
+    content: '';
+    height: 1.5rem;
+    border-radius: 0 0 50% 50%;
+    background-color: #4575c9
+  }
+}
+.border-module {
+  position: relative;
+  z-index: 10;
+  margin: .8rem .1rem 0;
+  padding: .1rem;
+  background-color: #fff;
+  box-shadow: 0 0 .12rem 0 rgba(0,0,0,.07);
+  border-radius: .1rem;
+}
+
+.rectangular-module {
+  padding: .1rem;
+}
+
+.module-title {
+  .font-bold(@font-size-lg, @color-black);
+  &::before {
+    display: inline-block;
+    margin-right: 4px;
+    .size(4px, .15rem);
+    content: '';
+    background-color: @primary-color;
+    border-radius: 2px;
+    vertical-align: middle;
+  }
+}

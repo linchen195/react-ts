@@ -4,9 +4,13 @@ import { MAINROUTES } from './routes'
 import { wechatLogin } from '@/api/wechat'
 
 export default class Router extends React.Component {
-  onLogin():void {
-    const res = wechatLogin({ umEmpno: 'LINCHEN832', isWX: 1 })
-    console.log(res)
+  async onLogin(): Promise<void> {
+    try {
+      const res = await wechatLogin({ umEmpno: 'LINCHEN832', isWX: 1 })
+      console.log('res', res)
+    } catch (error) {
+      console.error(error)
+    }
   }
   componentDidMount():void {
     this.onLogin()

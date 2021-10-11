@@ -13,8 +13,7 @@ export interface AxiosRequest {
 }
 
 const instance:AxiosInstance = axios.create({
-  // baseURL: process.env.BASE_URL,
-  baseURL: '/ehis-golden-key/',
+  baseURL: process.env.REACT_APP_BASE_URL,
   timeout: 20000,
 })
 
