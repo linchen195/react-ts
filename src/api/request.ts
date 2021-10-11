@@ -13,7 +13,8 @@ export interface AxiosRequest {
 }
 
 const instance:AxiosInstance = axios.create({
-  baseURL: process.env.BASE,
+  // baseURL: process.env.BASE_URL,
+  baseURL: '/ehis-golden-key/',
   timeout: 20000,
 })
 
@@ -36,7 +37,7 @@ export default (axiosConfig: AxiosRequest): Promise<AxiosResponse> => {
     data,
     params
   }
-  if (headers['Content-Type'] && headers['Content-Type'].indexOf('') > -1) {
+  if (headers && headers['Content-Type'] && headers['Content-Type'].indexOf('') > -1) {
     config.data = querystring(axiosConfig.data)
   }
   return instance.request(config)

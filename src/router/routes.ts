@@ -12,7 +12,7 @@ export const ROUTES: any[] = [
     component: Data
   },
   {
-    path: '/dev-busi',
+    path: '/dev_busi',
     exact: true,
     title: '展业',
     component: DevBusi

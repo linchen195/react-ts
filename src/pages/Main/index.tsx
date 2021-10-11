@@ -2,21 +2,23 @@ import React, { Component } from 'react'
 import Tabbar from '@/components/Tabbar'
 import TabbarItem from '@/components/TabbarItem'
 import { ROUTES } from '@/router/routes'
-import { RouteComponentProps } from 'react-router-dom'
 
-export default class Main extends Component<RouteComponentProps> {
-  onClick(path: string):void {
-    console.log(this.props)
-    this.props.history.push(path)
-  }
+import './main.less'
+interface IProps {
+  children?: any[]
+}
+
+class Main extends Component<IProps> {
   render(): JSX.Element {
     return (
       <div className="container">
-        {this.props.children}
+        <div className="content">
+          {this.props.children}
+        </div>
         <Tabbar>
           {
             ROUTES.map(item =>
-              <TabbarItem tabTitle={item.title} key={item.path} onClick={this.onClick.bind(this, item.path)} ></TabbarItem>
+              <TabbarItem tabTitle={item.title} key={item.path} path={item.path} ></TabbarItem>
             )
           }
         </Tabbar>
@@ -24,3 +26,5 @@ export default class Main extends Component<RouteComponentProps> {
     )
   }
 }
+
+export default Main

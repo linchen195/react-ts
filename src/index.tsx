@@ -8,6 +8,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router />
   </React.StrictMode>,
+  // <Router />,
   document.getElementById('root') as HTMLElement
 )
 

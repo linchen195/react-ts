@@ -1,13 +1,14 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import request from './request'
 
-export const code = (param) => request({
+export const getCode = (param) => request({
   method: 'get',
   url: 'wx/getUserInfoByCode',
   param
 })
 
-export const login = (data) => request({
+export const wechatLogin = (data) => request({
   method: 'post',
-  url: 'getUserPermission',
+  url: 'api/performance/getUserPermission',
   data
 })

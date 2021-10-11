@@ -1,9 +1,16 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { MAINROUTES } from './routes'
-// import Error from '@/pages/Error'
+import { wechatLogin } from '@/api/wechat'
 
 export default class Router extends React.Component {
+  onLogin():void {
+    const res = wechatLogin({ umEmpno: 'LINCHEN832', isWX: 1 })
+    console.log(res)
+  }
+  componentDidMount():void {
+    this.onLogin()
+  }
   render(): JSX.Element {
     return (
       <BrowserRouter>
