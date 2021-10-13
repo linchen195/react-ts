@@ -4,6 +4,8 @@ import { RouteComponentProps, withRouter } from 'react-router-dom'
 
 interface IProps {
   tabTitle?: string,
+  icon?: string,
+  activeIcon?: string,
   path?: any,
   active?: string | number,
   onClick?: (path: any) => void
@@ -32,13 +34,13 @@ class TabbarItem extends Component<HomeProps, IState> {
       this.props.onClick(path)
   }
   render(): JSX.Element {
-    const { path, active } = this.props
+    const { tabTitle, icon, activeIcon, path, active } = this.props
     return (
       <div className={`tabbar-item ${path == active?'tabbar-item-active':null}`} onClick={this.onClick}>
         <div className="tabbar-item-wrap">
-          <img className="tabbar-item-icon" src=""/>
+          <img className="tabbar-item-icon" src={path === active ? activeIcon : icon}/>
         </div>
-        <div className="tabbar-item-title">{this.props.tabTitle}</div>
+        <div className="tabbar-item-title">{tabTitle}</div>
       </div>
     )
   }

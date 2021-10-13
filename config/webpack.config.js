@@ -390,6 +390,7 @@ module.exports = function (webpackEnv) {
               options: {
                 limit: imageInlineSizeLimit,
                 name: 'static/media/[name].[hash:8].[ext]',
+                esModule: false
               },
             },
             // Process application JS with Babel.
