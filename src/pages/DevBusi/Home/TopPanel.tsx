@@ -6,7 +6,7 @@ import { PANELS, PanelItem } from './config'
 class TopPanel extends Component<RouteComponentProps> {
   render() {
     return (
-      <div className="border-module">
+      <div className="top-panel">
         <ul className="wrap-panel">
           {
             PANELS.map((item: PanelItem) => {

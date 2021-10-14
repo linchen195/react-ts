@@ -8,9 +8,12 @@
   background-size: 100% auto;
   background-repeat:no-repeat;
 }
-.border-module {
+.top-panel {
   margin: .8rem .1rem 0;
-  padding: .16rem .1rem;
+  padding: .16rem .1rem .14rem;
+  background-color: #fff;
+  box-shadow: 0 0 .12rem 0 rgba(0,0,0,.07);
+  border-radius: .1rem;
 }
 
 .wrap-panel {
@@ -38,12 +41,68 @@
   align-items: center;
 }
 
-.renewal-module {
+// 续保跟踪
+.renewal-container {
   margin-top: .1rem;
   background-color: #fff;
+  overflow: hidden;
+}
+.renewal-header {
+  padding: .1rem;
   .space-between;
+  .btn-more {
+    .font(.12rem, #999);
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &::after {
+      .icon-arrow-right(.06rem, #999)
+    }
+  }
 }
 
-.btn-more {
-  .font(.12rem, #999)
+// 网格
+.grid-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: .08rem;
+  background-color: #f4f7fb;
+  .grid-col {
+    padding: .15rem 0;
+    text-align: center;
+    .num {
+      .font-bold(.24rem, #fff)
+    }
+    .introduce {
+      .font(.12rem ,#fff)
+    }
+    &:first-child {
+      flex: 1.5;
+      border-radius: .06rem;
+      background: linear-gradient(-45deg, #A8ACFF 0%, #858BFF 100%);
+      
+    }
+    &:not(:first-child) {
+      flex: 1;
+      .num {
+        color: #666;
+      }
+      .introduce {
+        color: #999;
+      }
+    }
+  }
+  .icon-operator {
+    flex: .4;
+    text-align: center;
+    .font(.2rem, #d0d0d0);
+  }
+}
+
+.renewal-main {
+  margin: 0 .1rem .1rem;
+  padding: .05rem;
+  .grid-row;
 }

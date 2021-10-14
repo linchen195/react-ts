@@ -6,7 +6,8 @@ import Renewal from './Renewal'
 export default class DevBusi extends React.Component {
   render(): JSX.Element {
     return (
-      <div className="content-busi header-back">
+      <div className="content-busi">
+        {/* 顶部面板 */}
         <TopPanel></TopPanel>
         {/* 待办事项 */}
         {/* 续保追踪 */}

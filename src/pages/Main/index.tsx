@@ -11,8 +11,8 @@ interface IProps {
 class Main extends Component<IProps> {
   render(): JSX.Element {
     return (
-      <div className="container">
-        <div className="content">
+      <React.Fragment>
+        <div className="container">
           {this.props.children}
         </div>
         <Tabbar>
@@ -20,14 +20,18 @@ class Main extends Component<IProps> {
             ROUTES.map(item => {
               if (item.path === '/dev_busi') {
                 return <TabbarItem
-                  tabTitle={item.title}
                   key={item.path}
-                  path={item.path}>
+                  title={item.title}
+                  path={item.path}
+                >
+                  <div className="tab-item-center">
+                    <img src={require('@/assets/tabbar/tab_dev_busi.png')} />
+                  </div>
                 </TabbarItem>
               } else {
                 return <TabbarItem
-                  tabTitle={item.title}
                   key={item.path}
+                  title={item.title}
                   path={item.path}
                   icon={require(`@/assets/tabbar/tab_${item.icon}.png`)}
                   activeIcon={require(`@/assets/tabbar/tab_${item.icon}_active.png`)}
@@ -37,7 +41,7 @@ class Main extends Component<IProps> {
             })
           }
         </Tabbar>
-      </div>
+      </React.Fragment>
     )
   }
 }

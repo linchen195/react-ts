@@ -27,6 +27,11 @@
 }
 
 // 右箭头
-.icon-arrow-right {
-  
+.icon-arrow-right(@size, @color) {
+  display: inline-block;
+  .size(@size, @size);
+  content: '';
+  border-top: 1px solid @color;
+  border-right: 1px solid @color;
+  transform: rotate(45deg);
 }

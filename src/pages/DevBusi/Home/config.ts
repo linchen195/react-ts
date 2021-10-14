@@ -8,16 +8,16 @@ export const PANELS: PanelItem[] = [
   {
     title: '活动追踪量',
     icon: require('@/assets/dev_busi/panel_active.png'),
-    path: ''
+    path: 'active'
   },
   {
     title: '续保追踪',
     icon: require('@/assets/dev_busi/panel_renewal.png'),
-    path: ''
+    path: 'renewal'
   },
   {
     title: '运营提醒',
     icon: require('@/assets/dev_busi/panel_operate.png'),
-    path: ''
+    path: 'message'
   }
 ]

@@ -2,21 +2,22 @@ import React, { Component } from 'react'
 import './item.less'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
 
-interface IProps {
-  tabTitle?: string,
+interface IProps extends RouteComponentProps {
+  title?: string,
   icon?: string,
   activeIcon?: string,
   path?: any,
+  key?: any,
   active?: string | number,
   onClick?: (path: any) => void
 }
 interface IState {
   isSelected: boolean
 }
-type HomeProps = IProps & RouteComponentProps
+// type HomeProps = IProps & RouteComponentProps
 
-class TabbarItem extends Component<HomeProps, IState> {
-  constructor(props: HomeProps) {
+class TabbarItem extends Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props)
     this.state = {
       isSelected: false
@@ -30,17 +31,26 @@ class TabbarItem extends Component<HomeProps, IState> {
   onClick = ():void => {
     const { history, path } = this.props
     history.push(path)
+
     if (this.props.onClick)
       this.props.onClick(path)
   }
   render(): JSX.Element {
-    const { tabTitle, icon, activeIcon, path, active } = this.props
+    const { title, icon, activeIcon, path, active } = this.props
+    console.log(this.props.children)
+    const item =
+        <React.Fragment>
+          <div className="tabbar-item-wrap">
+            <img className="tabbar-item-icon" src={path === active ? activeIcon : icon}/>
+          </div>
+          <div className="tabbar-item-title">{title}</div>
+        </React.Fragment>
+    const custItem = this.props.children
     return (
       <div className={`tabbar-item ${path == active?'tabbar-item-active':null}`} onClick={this.onClick}>
-        <div className="tabbar-item-wrap">
-          <img className="tabbar-item-icon" src={path === active ? activeIcon : icon}/>
-        </div>
-        <div className="tabbar-item-title">{tabTitle}</div>
+        {
+          this.props.children ? custItem : item
+        }
       </div>
     )
   }

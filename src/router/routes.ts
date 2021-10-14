@@ -3,6 +3,7 @@ import Error from '@/pages/Error'
 import Data from '@/pages/Data'
 import Database from '@/pages/Database'
 import DevBusi from '@/pages/DevBusi/Home'
+import Renewal from '@/pages/DevBusi/Renewal'
 
 export const ROUTES: any[] = [
   {
@@ -29,6 +30,12 @@ export const ROUTES: any[] = [
 ]
 
 export const MAINROUTES: any[] = [
+  {
+    path: '/renewal',
+    exact: true,
+    title: '续保追踪',
+    component: Renewal
+  },
   {
     path: '/404',
     component: Error
