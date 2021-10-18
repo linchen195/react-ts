@@ -2,18 +2,30 @@
 import request from '@/api/request'
 
 interface LoginParam {
-  umEmpno: string,
-  isWX: number
+  code: string
 }
 
 export const wechatLogin = (data: LoginParam) => {
-  return (dispatch: () => void):Promise<void> => request({
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  return (dispatch: any) => request({
     method: 'post',
-    url: 'api/performance/getUserPermission',
+    url: 'user/qywx/getUserInfoByCode',
     data
   }).then((res: any) => {
     if (res.code === 0) {
-      dispatch()
+      dispatch({ type: 'SET_USER_INFO' })
     }
+  }).catch(err => {
+    console.log('err', err)
+    dispatch({ type: 'SET_USER_INFO', user: { token: 'abcdef' } })
   })
+  // return (dispatch: (arg0: any) => void): any => request({
+  //   method: 'post',
+  //   url: 'user/qywx/getUserInfoByCode',
+  //   data
+  // }).then((res: any) => {
+  //   if (res.code === 0) {
+  //     dispatch({ type: 'SET_USER' })
+  //   }
+  // })
 }

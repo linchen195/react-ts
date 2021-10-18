@@ -173,6 +173,7 @@
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.26.0",
     "less": "^4.1.1",
-    "less-loader": "^7.3.0"
+    "less-loader": "^7.3.0",
+    "redux-thunk": "^2.3.0"
   }
 }
