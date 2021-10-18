@@ -1,12 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './style/index.less'
 import reportWebVitals from './reportWebVitals'
 import Router from './router'
+import { Provider } from 'react-redux'
+import store from '@/store'
+
+import './style/index.less'
+import 'antd-mobile/es/global'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router />
+    <Provider store={store}>
+      <Router />
+    </Provider>
   </React.StrictMode>,
   // <Router />,
   document.getElementById('root') as HTMLElement

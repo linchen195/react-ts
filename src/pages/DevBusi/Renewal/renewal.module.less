@@ -1,0 +1,88 @@
+
+@import '@/style/page.less';
+
+.content-renewal {
+  padding: .15rem 0;
+  .header-back;
+}
+
+// 顶部续保追踪
+.trace-title {
+  margin: .1rem 0;
+  .module-title;
+}
+.trace-grid {
+  display: flex;
+  margin-bottom: .18rem;
+}
+.trace-grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  text-align: center;
+  .title {
+    .font(.12rem, #666);
+  }
+  .num{
+    font-size: .24rem;
+    font-weight: bold;
+  }
+  .num-orange {
+    .num;
+    color: #ff6600
+  }
+  &:first-child {
+    flex: 1.8;
+    text-align: left;
+    box-shadow: .005rem 0 0 0 #0000000f;
+    .num {
+      font-size: .36rem;
+    }
+  }
+}
+// 排序
+.wrap-sort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 .1rem;
+}
+.wrap-dropdown {
+  background-color: rgba(0,0,0,0)!important;
+  .dropdown-item {
+    display: inline-block;
+    margin-right: .1rem;
+    padding: .04rem .1rem;
+    width: 1rem;
+    background-color: #fff;
+    border-radius: .04rem;
+    .font(.14rem, #666);
+    :global .adm-dropdown-item-title {
+      padding: 0;
+    }
+  }
+}
+
+.all-num {
+  .font(.12rem, #666);
+}
+
+// 列表
+.wrap-item {
+  .rectangle-card;
+  .cpn-name {
+    .font-bold(.16rem, #333);
+  }
+  .policy-intro {
+    margin: .08rem 0;
+    .font(.12rem, #999)
+  }
+  .policy-tag {
+    display: inline-block;
+    padding: .03rem .05rem;
+    .font(.12rem, #4575c9);
+    background-color: #e8f0ff;
+    border-radius: .04rem;
+  }
+}

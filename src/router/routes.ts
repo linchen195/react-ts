@@ -4,6 +4,7 @@ import Data from '@/pages/Data'
 import Database from '@/pages/Database'
 import DevBusi from '@/pages/DevBusi/Home'
 import Renewal from '@/pages/DevBusi/Renewal'
+import RnwDetail from '@/pages/DevBusi/RnwDetail'
 
 export const ROUTES: any[] = [
   {
@@ -35,6 +36,12 @@ export const MAINROUTES: any[] = [
     exact: true,
     title: '续保追踪',
     component: Renewal
+  },
+  {
+    path: '/rnw_detail',
+    exact: true,
+    title: '续保追踪',
+    component: RnwDetail
   },
   {
     path: '/404',

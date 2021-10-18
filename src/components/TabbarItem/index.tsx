@@ -37,7 +37,6 @@ class TabbarItem extends Component<IProps, IState> {
   }
   render(): JSX.Element {
     const { title, icon, activeIcon, path, active } = this.props
-    console.log(this.props.children)
     const item =
         <React.Fragment>
           <div className="tabbar-item-wrap">

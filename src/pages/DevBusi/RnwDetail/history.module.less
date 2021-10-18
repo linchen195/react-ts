@@ -1,0 +1,85 @@
+@import '@/style/mixin.less';
+@import '@/style/variable.less';
+
+.content-history {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: .2rem 0;
+  width: 86%;
+  transform: translateX(-50%) translateY(-60%);
+  background-color: #fff;
+  border-radius: 5px;
+}
+.history-title {
+  .font-bold(.14rem, #333);
+  text-align: center;
+}
+.btn-close {
+  position: absolute;
+  right: 0;
+  top: -.35rem;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  .size(.24rem, .24rem);
+  line-height: .24rem;
+  font-size: .24rem;
+  font-family: Arial;
+  text-align: center;
+  color: #fff;
+  background-color: #999;
+  border-radius: 50%;
+}
+// 折叠面板
+.wrap-step {
+  :global .adm-steps {
+    .adm-step-icon-container {
+      padding-top: 4px;
+    }
+    .adm-step-title {
+      color: #333;
+      font-weight: bold;
+    }
+    .adm-step-icon-dot {
+      display: inline-block;
+      .size(.14rem, .14rem);
+      background-color: #fff;
+      border-radius: 50%;
+    }
+    .adm-step-status-process {
+      .adm-step-icon-dot { 
+        border: 3px solid @primary-color;
+      }
+    }
+    .adm-step-status-wait {
+      .adm-step-icon-dot { 
+        border: 3px solid #ccc;
+      }
+    }
+  }
+}
+
+.wrap-collapse {
+  :global .adm-list{
+    border: none;
+  }
+  :global .adm-collapse-panel-content {
+    .adm-list-item {
+      padding-left: 0;
+    }
+  }
+}
+.wrap-panel {
+  padding-left: 0;
+  :global .adm-list-item-content {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    border-bottom: none;
+    .adm-list-item-content-arrow {
+      font-size: .14rem;
+      font-weight: bold;
+    }
+  }
+}

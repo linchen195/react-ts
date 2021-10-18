@@ -1,0 +1,45 @@
+
+@import '@/style/page.less';
+
+.content-detail {
+  padding: .1rem 0;
+  height: 100%;
+  overflow-y: auto;
+  .header-back;
+}
+
+.top-total {
+  padding: .1rem;
+  .rectangle-card;
+  .cpn-name {
+    .font-bold(.18rem, #333);
+  }
+  .policy-intro {
+    margin: .08rem 0;
+    .font(.12rem, #999)
+  }
+  .policy-tag {
+    display: inline-block;
+    padding: .03rem .05rem;
+    .font(.12rem, #4575c9);
+    background-color: #e8f0ff;
+    border-radius: .04rem;
+  }
+}
+
+.wrap-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 .1rem;
+  .btn-history {
+    .font(.12rem, #999);
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &::after {
+      .icon-arrow-right(.06rem, #999)
+    }
+  }
+}

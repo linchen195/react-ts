@@ -4,7 +4,7 @@ import RowModule from './RowModule'
 
 class Renewal extends Component<RouteComponentProps>{
   jumpRenewalPage = () => {
-    this.props.history.push('/renewal')
+    this.props.history.push({ pathname: '/renewal/'+'fdsf' })
   }
   render() {
     return (
