@@ -8,8 +8,7 @@ export const getCode = (): Promise<AxiosResponse> => request({
 })
 
 interface LoginParam {
-  umEmpno: string,
-  isWX: number
+  um: string,
 }
 export const wechatLogin = (data: LoginParam): Promise<AxiosResponse> => request({
   method: 'post',

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch } from 'react-router-dom'
+import { BrowserRouter, Switch, } from 'react-router-dom'
 import AllRoute from './AllRoute'
 
 class Router extends React.Component{

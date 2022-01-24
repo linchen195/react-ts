@@ -1,0 +1,41 @@
+
+.custom-collapse {
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.icon-arrow() {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  right: .12rem;
+  width: .06rem;
+  height: .06rem;
+  margin-top: -.05rem;
+  content: '';
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+  transform: rotate(45deg);
+}
+.collapse-title {
+  position: relative;
+  padding: .1rem;
+  &::after {
+    .icon-arrow();
+    transition: .3s transform, .3s margin;
+  }
+  &.expand {
+    &::after {
+      margin-top: -.02rem;
+      transform: rotate(-135deg);
+    }
+  }
+}
+
+.collapse-wrapper {
+  overflow: hidden;
+  transition: height .3s;
+}
+.collapse-content {
+  padding: .1rem
+}

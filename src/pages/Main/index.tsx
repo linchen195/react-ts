@@ -18,7 +18,7 @@ class Main extends Component<IProps> {
         <Tabbar>
           {
             ROUTES.map(item => {
-              if (item.path === '/dev_busi') {
+              if (item.path.indexOf('dev_busi') > -1) {
                 return <TabbarItem
                   key={item.path}
                   title={item.title}

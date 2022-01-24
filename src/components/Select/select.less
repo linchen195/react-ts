@@ -1,0 +1,31 @@
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  padding-right: .2rem;
+  width: 100%;
+  .slt-choose {
+    &::after {
+      position: absolute;
+      display: inline-block;
+      top: .03rem;
+      right: .02rem;
+      width: .09rem;
+      height: .09rem;
+      content: '';
+      border-bottom: 1px solid #c8c9cc;
+      border-right: 1px solid #c8c9cc;
+      transform: rotate(45deg);
+    }
+  }
+  span {
+    display: inline-block;
+  }
+  .slt-placeholder {
+    font-size: .14rem;
+    color: #c8c9cc;
+  }
+  .slt-text {
+    color: #333;
+  }
+}

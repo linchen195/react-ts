@@ -23,7 +23,7 @@ class TabbarItem extends Component<IProps, IState> {
       isSelected: false
     }
   }
-  UNSAFE_componentWillMount(): void {
+  componentDidMount(): void {
     if (this.props.path === this.props.location.pathname) {
       this.setState({ isSelected: true })
     }

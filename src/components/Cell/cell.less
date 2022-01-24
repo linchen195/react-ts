@@ -1,0 +1,38 @@
+@import '@/style/mixin.less';
+
+.custom-cell {
+  position: relative;
+  display: cell;
+  flex-wrap: wrap;
+  padding: .12rem .15rem;
+  line-height: .2rem;
+  background-color: #fff;
+  &:not(:last-child) {
+    &::after {
+      position: absolute;
+      left: .15rem;
+      right: .15rem;
+      bottom: 0;
+      content: '';
+      border-bottom: 1px solid #ebedf0
+    }
+  }
+  .cell-title {
+    .font(.1rem, #333);
+    overflow: hidden;
+  }
+  .cell-value {
+    .font(.14rem, #999);
+    text-align: right;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
+  // 列宽
+  .cell-col(0);
+  .cell-col(@col) when (@col < 25) {
+    .cell-col-@{col} {
+      flex: @col
+    }
+    .cell-col(@col+1);
+  }
+}

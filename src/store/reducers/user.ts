@@ -4,30 +4,33 @@ interface UserState {
   um: string | null,
   name: string | null,
   role: any,
-  region: any
+  region: any,
+  noPermission: boolean
 }
 
 interface Action {
     type: string,
-    user?: any,
+    user: UserState,
 }
 const initState = {
   token: null,
   um: null,
   name: null,
   role: {},
-  region: {}
+  region: {},
+  noPermission: false
 }
 const user = (state: UserState = initState, action: Action): any => {
-  console.log(action)
   switch (action.type) {
     case 'SET_USER_INFO':
+      // eslint-disable-next-line no-case-declarations
+      const { token, um, name, region, role } = action.user
       return {
-        token: action.user.token,
+        token, um, name, region, role
       }
-    case 'SET_LOGIN':
+    case 'SET_NO_PERMISSION':
       return {
-        name: '李四'
+        noPermission: true
       }
     default:
       return state

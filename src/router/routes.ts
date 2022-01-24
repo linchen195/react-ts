@@ -1,6 +1,6 @@
 import Main from '@/pages/Main'
-import Error from '@/pages/Error'
-import Data from '@/pages/Data'
+import Error from '@/pages/Error/Error'
+import Data from '@/pages/Data/Home'
 import Database from '@/pages/Database'
 import DevBusi from '@/pages/DevBusi/Home'
 import Renewal from '@/pages/DevBusi/Renewal'
@@ -8,21 +8,21 @@ import RnwDetail from '@/pages/DevBusi/RnwDetail'
 
 export const ROUTES: any[] = [
   {
-    path: '/data',
+    path: '/main/data',
     exact: true,
     title: '数据看板',
     icon: 'data',
     component: Data
   },
   {
-    path: '/dev_busi',
+    path: '/main/dev_busi',
     exact: true,
     title: '展业',
-    icon: 'data',
+    icon: 'dev_busi',
     component: DevBusi
   },
   {
-    path: '/database',
+    path: '/main/database',
     exact: true,
     title: '知识库',
     icon: 'database',
@@ -48,7 +48,7 @@ export const MAINROUTES: any[] = [
     component: Error
   },
   {
-    path: '/',
+    path: '/main',
     component: Main,
     routes: ROUTES,
   }

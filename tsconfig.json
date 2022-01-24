@@ -23,7 +23,8 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": [
     "src"

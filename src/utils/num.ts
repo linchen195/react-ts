@@ -13,7 +13,7 @@ export function thousands(num: number, bits: number):string {
 }
 
 // 百分比
-export function percentage(num: number, bits: number):string {
+export function percentage(num: number, bits?: number):string {
   if (empty(num)) return '-'
   const bitNum = typeof bits === 'undefined' ? 1 : bits
   const x = Math.pow(10, bitNum)

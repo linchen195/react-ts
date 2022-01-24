@@ -8,6 +8,9 @@ import store from '@/store'
 import './style/index.less'
 import 'antd-mobile/es/global'
 
+const vConsole = require('vconsole')
+new vConsole()
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

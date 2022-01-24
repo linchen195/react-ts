@@ -1,0 +1,29 @@
+
+.form-item-required {
+  &::before {
+    display: inline-block;
+    margin-right: 2px;
+    content: '*';
+    color: #ff6600;
+    transform: translateY(2px);
+  }
+}
+
+.form-wrap-btn {
+  text-align: center;
+  overflow: hidden;
+}
+.btn-bottom-sure {
+  margin: .12rem 0;
+}
+
+.text-left {
+  text-align: left!important;
+}
+.text-right {
+  text-align: right
+}
+// 兼容性问题，三星有问题
+button[disabled] {
+  opacity: .7;
+}
