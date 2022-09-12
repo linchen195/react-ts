@@ -28,7 +28,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 
 const postcssNormalize = require('postcss-normalize')
 // 查看项目一共打了多少包，每个包的体积，每个包里面的包情况
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const appPackageJson = require(paths.appPackageJson)
 
@@ -769,7 +769,7 @@ module.exports = function (webpackEnv) {
             },
           },
         }),
-      new BundleAnalyzerPlugin()
+      // new BundleAnalyzerPlugin()
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
     // Tell webpack to provide empty mocks for them so importing them works.

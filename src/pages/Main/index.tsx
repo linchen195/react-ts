@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Tabbar from '@/components/Tabbar'
 import TabbarItem from '@/components/TabbarItem'
-import { ROUTES } from '@/router/routes'
+import { MENUS } from './config'
 
 import './main.less'
 interface IProps {
@@ -17,11 +17,10 @@ class Main extends Component<IProps> {
         </div>
         <Tabbar>
           {
-            ROUTES.map(item => {
+            MENUS.map((item: any) => {
               if (item.path.indexOf('dev_busi') > -1) {
                 return <TabbarItem
                   key={item.path}
-                  title={item.title}
                   path={item.path}
                 >
                   <div className="tab-item-center">

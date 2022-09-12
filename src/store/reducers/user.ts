@@ -1,3 +1,4 @@
+import { lazy } from 'react'
 
 interface UserState {
   token: string | null,
@@ -5,12 +6,13 @@ interface UserState {
   name: string | null,
   role: any,
   region: any,
-  noPermission: boolean
+  menus: any[],
+  noPermission: boolean,
 }
 
 interface Action {
-    type: string,
-    user: UserState,
+  type: string,
+  user: UserState,
 }
 const initState = {
   token: null,
@@ -18,15 +20,16 @@ const initState = {
   name: null,
   role: {},
   region: {},
-  noPermission: false
+  menus: [],
+  noPermission: false,
 }
 const user = (state: UserState = initState, action: Action): any => {
   switch (action.type) {
     case 'SET_USER_INFO':
       // eslint-disable-next-line no-case-declarations
-      const { token, um, name, region, role } = action.user
+      const { token, um, name, region, role, menus } = action.user
       return {
-        token, um, name, region, role
+        token, um, name, region, role, menus: initRoutes(menus)
       }
     case 'SET_NO_PERMISSION':
       return {
@@ -38,3 +41,19 @@ const user = (state: UserState = initState, action: Action): any => {
 }
 
 export default user
+
+// 格式化页面路由
+function initRoutes(menus: any[]): any[] {
+  return menus.map((item: any) => {
+    const { menuCode, title, path, children, component, type } = item
+    return {
+      menuCode,
+      path,
+      title,
+      component: lazy(() => import(`@/pages/${component}`)),
+      children: children ? initRoutes(children) : null,
+      permission: children,
+      type: type
+    }
+  })
+}

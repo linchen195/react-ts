@@ -1,17 +1,20 @@
-import React from 'react'
-import { BrowserRouter, Switch, } from 'react-router-dom'
-import AllRoute from './AllRoute'
+import React, { Suspense } from 'react'
+import { BrowserRouter, } from 'react-router-dom'
 
-class Router extends React.Component{
-  render(): JSX.Element {
-    return (
-      <BrowserRouter>
-        <Switch>
-          <AllRoute></AllRoute>
-        </Switch>
-      </BrowserRouter>
-    )
-  }
+import Login from './Login'
+import Loading from '@/components/Loading'
+
+const Router = () =>{
+  return (
+    <BrowserRouter>
+      <Suspense fallback={
+        <Loading className="router-loading" text="页面加载中"></Loading>
+      }>
+        <Login></Login>
+      </Suspense>
+    </BrowserRouter>
+  )
 }
 
 export default Router
+

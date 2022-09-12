@@ -1,55 +1,23 @@
 
-import React, { useEffect } from 'react'
+import React from 'react'
+import { useHistory } from 'react-router-dom'
 
 import style from './data.module.less'
 
 const Data = () => {
-  useEffect(() => {
-    mount()
-  }, [])
+  const history = useHistory()
 
-  const mount = () => {
-    console.log('1')
-
-    setTimeout(function() {
-      console.log('2')
-      process.nextTick(function() {
-        console.log('3')
-      })
-      new Promise<void>(function(resolve) {
-        console.log('4')
-        resolve()
-      }).then(function() {
-        console.log('5')
-      })
-    })
-    process.nextTick(function() {
-      console.log('6')
-    })
-    new Promise<void>(function(resolve) {
-      console.log('7')
-      resolve()
-    }).then(function() {
-      console.log('8')
-    })
-
-    setTimeout(function() {
-      console.log('9')
-      process.nextTick(function() {
-        console.log('10')
-      })
-      new Promise<void>(function(resolve) {
-        console.log('11')
-        resolve()
-      }).then(function() {
-        console.log('12')
-      })
-    })
-    console.log('13')
+  const jumpProptotypePage = (pathname: string) => {
+    history.push({ pathname })
   }
+
   return (
     <div className={style['content-data']}>
       {/* <Pie data={data}></Pie> */}
+      <button onClick={() => jumpProptotypePage('/prototype')}>prototype</button>
+      <button onClick={() => jumpProptotypePage('/eventloop')}>eventloop</button>
+      <button onClick={() => jumpProptotypePage('/debounce')}>debounce</button>
+      <button onClick={() => jumpProptotypePage('/es6')}>es6</button>
     </div>
   )
 }

@@ -30,8 +30,9 @@ class TabbarItem extends Component<IProps, IState> {
   }
   onClick = ():void => {
     const { history, path } = this.props
-    history.push(path)
-
+    // 已经是本页面就无须重新进入
+    if (history.location.pathname !== path)
+      history.push(path)
     if (this.props.onClick)
       this.props.onClick(path)
   }
